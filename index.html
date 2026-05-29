@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="海德克科技股份有限公司 — 電影級無人載具品牌敘事，從天空重新定義可能。">
+  <title>海德克科技｜Beyond the Horizon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700;900&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cinematic preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__brand">
+        <span class="preloader__letter">H</span>
+        <span class="preloader__letter">E</span>
+        <span class="preloader__letter">I</span>
+        <span class="preloader__letter">D</span>
+        <span class="preloader__letter">E</span>
+        <span class="preloader__letter">K</span>
+      </div>
+      <div class="preloader__bar"><span></span></div>
+      <p class="preloader__tag">Beyond the Horizon</p>
+    </div>
+  </div>
+
+  <!-- Film grain & vignette -->
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="film-vignette" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <header class="cinema-header" id="cinemaHeader">
+    <a href="#top" class="cinema-logo">
+      <span class="cinema-logo__en">HEIDEK</span>
+      <span class="cinema-logo__zh">海德克科技</span>
+    </a>
+    <button class="cinema-menu-btn" id="menuBtn" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="cinema-nav" id="cinemaNav">
+      <a href="#about"><span>01</span>關於我們</a>
+      <a href="#services"><span>02</span>營運內容</a>
+      <a href="#gallery"><span>—</span>研發實境</a>
+      <a href="#cases"><span>03</span>案例介紹</a>
+      <a href="#team"><span>04</span>研發團隊</a>
+      <a href="#careers"><span>05</span>人才招募</a>
+      <a href="#contact" class="cinema-nav__cta">聯繫我們</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ═══ ACT I · OPENING ═══ -->
+    <section class="hero-cinema" id="hero">
+      <div class="hero-cinema__letterbox hero-cinema__letterbox--top"></div>
+      <div class="hero-cinema__letterbox hero-cinema__letterbox--bottom"></div>
+
+      <div class="hero-cinema__layers" data-parallax-root>
+        <div class="hero-cinema__layer hero-cinema__layer--back" data-parallax="0.15">
+          <img src="assets/images/power-inspection.jpg" alt="" class="ken-burns ken-burns--slow">
+        </div>
+        <div class="hero-cinema__layer hero-cinema__layer--mid" data-parallax="0.35">
+          <img src="assets/images/hero-drone.jpg" alt="" class="ken-burns ken-burns--reverse">
+        </div>
+        <div class="hero-cinema__layer hero-cinema__layer--front" data-parallax="0.55">
+          <div class="hero-cinema__gradient"></div>
+        </div>
+      </div>
+
+      <!-- Animated HUD -->
+      <div class="hero-hud" aria-hidden="true">
+        <svg class="hero-hud__radar" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+          <circle cx="60" cy="60" r="36" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+          <circle cx="60" cy="60" r="18" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+          <line class="hero-hud__sweep" x1="60" y1="60" x2="60" y2="8" stroke="currentColor" stroke-width="1"/>
+          <circle cx="78" cy="42" r="2" fill="currentColor" class="hero-hud__blip"/>
+        </svg>
+        <div class="hero-hud__readout">
+          <span class="hero-hud__label">ALT</span>
+          <span class="hero-hud__value" data-hud-counter="1240">0</span>
+          <span class="hero-hud__unit">m</span>
+        </div>
+        <div class="hero-hud__readout hero-hud__readout--2">
+          <span class="hero-hud__label">SPD</span>
+          <span class="hero-hud__value" data-hud-counter="68">0</span>
+          <span class="hero-hud__unit">km/h</span>
+        </div>
+      </div>
+
+      <div class="hero-cinema__content">
+        <p class="hero-cinema__act reveal-up">Act I · Opening</p>
+        <h1 class="hero-cinema__title">
+          <span class="hero-cinema__title-line reveal-up" style="--d:0.1s">從天空，</span>
+          <span class="hero-cinema__title-line hero-cinema__title-line--accent reveal-up" style="--d:0.25s">重新定義可能</span>
+        </h1>
+        <p class="hero-cinema__subtitle reveal-up" style="--d:0.45s">
+          海德克科技 · 2025 · 台灣無人載具研發新創
+        </p>
+        <div class="hero-cinema__cta reveal-up" style="--d:0.6s">
+          <a href="#about" class="btn-cinema btn-cinema--primary">進入故事</a>
+          <a href="#contact" class="btn-cinema btn-cinema--ghost">開始合作</a>
+        </div>
+      </div>
+
+      <div class="hero-cinema__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="hero-cinema__scroll-line"></div>
+      </div>
+
+      <!-- Flight path SVG animation -->
+      <svg class="hero-flight-path" viewBox="0 0 800 200" preserveAspectRatio="none" aria-hidden="true">
+        <path class="hero-flight-path__trail" d="M0,120 Q200,40 400,100 T800,80" fill="none"/>
+        <circle class="hero-flight-path__dot" r="4" fill="currentColor"/>
+      </svg>
+    </section>
+
+    <!-- Stats marquee -->
+    <section class="stats-cinema" aria-label="關鍵數字">
+      <div class="stats-cinema__track">
+        <div class="stats-cinema__item"><span class="stats-cinema__num" data-count="2025">0</span><span class="stats-cinema__label">成立年份</span></div>
+        <div class="stats-cinema__item"><span class="stats-cinema__num" data-count="12">0</span><span class="stats-cinema__label">核心團隊</span></div>
+        <div class="stats-cinema__item"><span class="stats-cinema__num" data-count="3">0</span><span class="stats-cinema__label">進行中專案</span></div>
+        <div class="stats-cinema__item"><span class="stats-cinema__num" data-count="100">0</span><span class="stats-cinema__label">HK-100 概念載具</span></div>
+        <!-- duplicate for seamless loop -->
+        <div class="stats-cinema__item" aria-hidden="true"><span class="stats-cinema__num">2025</span><span class="stats-cinema__label">成立年份</span></div>
+        <div class="stats-cinema__item" aria-hidden="true"><span class="stats-cinema__num">12</span><span class="stats-cinema__label">核心團隊</span></div>
+        <div class="stats-cinema__item" aria-hidden="true"><span class="stats-cinema__num">3</span><span class="stats-cinema__label">進行中專案</span></div>
+        <div class="stats-cinema__item" aria-hidden="true"><span class="stats-cinema__num">100</span><span class="stats-cinema__label">HK-100 概念載具</span></div>
+      </div>
+    </section>
+
+    <!-- ═══ CHAPTER 01 · ABOUT ═══ -->
+    <section class="chapter-interstitial reveal-fade" data-chapter>
+      <span class="chapter-interstitial__num">Chapter 01</span>
+      <h2 class="chapter-interstitial__title">Origin</h2>
+      <div class="chapter-interstitial__line"></div>
+    </section>
+
+    <section class="about-cinema" id="about">
+      <div class="about-cinema__visual reveal-scale">
+        <img src="assets/images/lab-team.jpg" alt="海德克科技次系統研發作業" class="ken-burns">
+        <div class="scan-line" aria-hidden="true"></div>
+      </div>
+      <div class="about-cinema__body">
+        <p class="section-eyebrow reveal-up">About Us · 關於我們</p>
+        <h2 class="section-title reveal-up">在內湖，<br>從零寫下天空的篇章</h2>
+        <p class="section-lead reveal-up">
+          海德克科技股份有限公司創立於 2025 年，總部位於台北內湖科技園區。核心團隊具備航空工程、材料科學與電機資訊背景，從零打造無人載具研發體系。
+        </p>
+        <p class="reveal-up">
+          我們以「載體結構 × 複合材料 × 次系統整合」為起點，從概念設計、原型開發到飛行驗證，提供端到端的技術服務。新創的活力，加上團隊的專業——這是我們對台灣無人載具產業的承諾。
+        </p>
+        <ul class="about-cinema__pillars reveal-up">
+          <li><span>01</span>2025 年正式成立的新創團隊</li>
+          <li><span>02</span>具原型開發能力的加工工房</li>
+          <li><span>03</span>合作測試場域支援飛行驗證</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Full-screen quote -->
+    <section class="quote-cinema reveal-fade">
+      <div class="quote-cinema__bg">
+        <img src="assets/images/hero-drone.jpg" alt="" class="ken-burns ken-burns--slow">
+      </div>
+      <blockquote class="quote-cinema__text reveal-up">
+        「每一架原型機的起飛，<br>都是台灣天空的新一頁。」
+      </blockquote>
+      <cite class="quote-cinema__cite reveal-up">— 海德克科技 · Heidek Technology</cite>
+    </section>
+
+    <!-- ═══ CHAPTER 02 · SERVICES ═══ -->
+    <section class="chapter-interstitial reveal-fade" data-chapter>
+      <span class="chapter-interstitial__num">Chapter 02</span>
+      <h2 class="chapter-interstitial__title">Capability</h2>
+      <div class="chapter-interstitial__line"></div>
+    </section>
+
+    <section class="services-cinema" id="services">
+      <header class="services-cinema__head">
+        <p class="section-eyebrow reveal-up">Operations · 營運內容</p>
+        <h2 class="section-title reveal-up">兩大核心，<br>一條完整的研發弧線</h2>
+      </header>
+
+      <article class="service-cinema reveal-up">
+        <div class="service-cinema__media">
+          <img src="assets/images/workshop.jpg" alt="無人載具載體原型精密加工" loading="lazy" class="ken-burns">
+          <span class="service-cinema__badge">Business 01</span>
+        </div>
+        <div class="service-cinema__content">
+          <h3>無人載具載體及複合材料<br>研發與製造</h3>
+          <p>固定翼、多旋翼、VTOL 等構型載體設計，碳纖維預浸布製程打造輕量化原型。HK-100 概念載具已完成首階段結構驗證。</p>
+          <ul>
+            <li>載體結構設計與 CFD / FEA 分析</li>
+            <li>碳纖維 / 玻璃纖維複材原型成型</li>
+            <li>概念驗證、風洞與外場飛測</li>
+            <li>小量試產製程規劃（建置中）</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="service-cinema service-cinema--reverse reveal-up">
+        <div class="service-cinema__media">
+          <img src="assets/images/lab-team.jpg" alt="次系統電路整合測試" loading="lazy" class="ken-burns ken-burns--reverse">
+          <span class="service-cinema__badge">Business 02</span>
+        </div>
+        <div class="service-cinema__content">
+          <h3>無人載具次系統<br>研發與代理</h3>
+          <p>整合 Pixhawk、Cube 等飛控平台，建立國際零組件代理合作。硬體選型、韌體調校到次系統整合的原型階段技術服務。</p>
+          <ul>
+            <li>飛控系統（FC）整合與 PID 調參</li>
+            <li>4G/5G 圖傳、Mesh 通訊鏈路建置</li>
+            <li>光電吊艙、LiDAR 等載荷整合</li>
+            <li>ArduPilot / PX4 客製化任務規劃</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Animated process timeline -->
+      <div class="process-cinema reveal-up">
+        <p class="process-cinema__label">Service Pipeline</p>
+        <ol class="process-cinema__steps">
+          <li><span class="process-cinema__dot"></span><strong>01</strong>需求訪談</li>
+          <li><span class="process-cinema__dot"></span><strong>02</strong>方案設計</li>
+          <li><span class="process-cinema__dot"></span><strong>03</strong>原型開發</li>
+          <li><span class="process-cinema__dot"></span><strong>04</strong>飛測驗證</li>
+          <li><span class="process-cinema__dot"></span><strong>05</strong>交付量產</li>
+        </ol>
+        <div class="process-cinema__beam" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ═══ GALLERY · MONTAGE ═══ -->
+    <section class="montage-cinema" id="gallery" aria-label="研發實境蒙太奇">
+      <div class="montage-cinema__intro reveal-up">
+        <p class="section-eyebrow">R&amp;D Montage · 研發實境</p>
+        <h2 class="section-title">每一幀，都是驗證的證明</h2>
+      </div>
+
+      <!-- Infinite film strip -->
+      <div class="film-strip" aria-hidden="true">
+        <div class="film-strip__track">
+          <figure><img src="assets/images/hero-drone.jpg" alt=""><figcaption>飛行測試</figcaption></figure>
+          <figure><img src="assets/images/lab-engineer.jpg" alt=""><figcaption>結構設計</figcaption></figure>
+          <figure><img src="assets/images/lab-team.jpg" alt=""><figcaption>次系統整合</figcaption></figure>
+          <figure><img src="assets/images/workshop.jpg" alt=""><figcaption>原型加工</figcaption></figure>
+          <figure><img src="assets/images/power-inspection.jpg" alt=""><figcaption>巡檢應用</figcaption></figure>
+          <figure><img src="assets/images/satellite-tech.jpg" alt=""><figcaption>通訊鏈路</figcaption></figure>
+          <figure><img src="assets/images/hero-drone.jpg" alt=""><figcaption>外場飛測</figcaption></figure>
+          <figure><img src="assets/images/lab-engineer.jpg" alt=""><figcaption>工程圖面</figcaption></figure>
+          <!-- duplicate -->
+          <figure><img src="assets/images/hero-drone.jpg" alt=""><figcaption>飛行測試</figcaption></figure>
+          <figure><img src="assets/images/lab-engineer.jpg" alt=""><figcaption>結構設計</figcaption></figure>
+          <figure><img src="assets/images/lab-team.jpg" alt=""><figcaption>次系統整合</figcaption></figure>
+          <figure><img src="assets/images/workshop.jpg" alt=""><figcaption>原型加工</figcaption></figure>
+          <figure><img src="assets/images/power-inspection.jpg" alt=""><figcaption>巡檢應用</figcaption></figure>
+          <figure><img src="assets/images/satellite-tech.jpg" alt=""><figcaption>通訊鏈路</figcaption></figure>
+          <figure><img src="assets/images/hero-drone.jpg" alt=""><figcaption>外場飛測</figcaption></figure>
+          <figure><img src="assets/images/lab-engineer.jpg" alt=""><figcaption>工程圖面</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="gallery-cinema">
+        <figure class="gallery-cinema__item reveal-scale"><img src="assets/images/hero-drone.jpg" alt="多旋翼外場飛行測試" loading="lazy"><figcaption><span>01</span>飛行測試</figcaption></figure>
+        <figure class="gallery-cinema__item reveal-scale"><img src="assets/images/lab-engineer.jpg" alt="載具結構設計" loading="lazy"><figcaption><span>02</span>結構設計</figcaption></figure>
+        <figure class="gallery-cinema__item gallery-cinema__item--wide reveal-scale"><img src="assets/images/power-inspection.jpg" alt="基礎設施巡檢" loading="lazy"><figcaption><span>03</span>巡檢應用</figcaption></figure>
+        <figure class="gallery-cinema__item reveal-scale"><img src="assets/images/workshop.jpg" alt="原型加工" loading="lazy"><figcaption><span>04</span>原型加工</figcaption></figure>
+        <figure class="gallery-cinema__item reveal-scale"><img src="assets/images/lab-team.jpg" alt="次系統整合" loading="lazy"><figcaption><span>05</span>次系統整合</figcaption></figure>
+        <figure class="gallery-cinema__item reveal-scale"><img src="assets/images/satellite-tech.jpg" alt="通訊鏈路" loading="lazy"><figcaption><span>06</span>通訊鏈路</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ═══ CHAPTER 03 · CASES (sticky stack) ═══ -->
+    <section class="chapter-interstitial reveal-fade" data-chapter>
+      <span class="chapter-interstitial__num">Chapter 03</span>
+      <h2 class="chapter-interstitial__title">Mission</h2>
+      <div class="chapter-interstitial__line"></div>
+    </section>
+
+    <section class="cases-cinema" id="cases">
+      <header class="cases-cinema__head reveal-up">
+        <p class="section-eyebrow">Case Studies · 案例介紹</p>
+        <h2 class="section-title">進行中的任務紀錄</h2>
+        <p class="section-sub">新創初期研發進度（示範資料）</p>
+      </header>
+
+      <div class="cases-stack">
+        <article class="case-card">
+          <div class="case-card__bg">
+            <img src="assets/images/hero-drone.jpg" alt="" class="ken-burns">
+          </div>
+          <div class="case-card__overlay"></div>
+          <div class="case-card__content">
+            <span class="case-card__index">Mission 01</span>
+            <span class="case-card__status">研發中 · 2025–2026</span>
+            <h3>HK-100 概念偵察載具</h3>
+            <p>公司首項自主研發專案，固定翼偵察載具原型，碳纖維機身。已完成首架原型組裝，進入地面測試與試飛準備。</p>
+            <div class="case-card__tags"><span>複合材料</span><span>長航時</span><span>偵察任務</span></div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-card__bg">
+            <img src="assets/images/power-inspection.jpg" alt="" class="ken-burns ken-burns--reverse">
+          </div>
+          <div class="case-card__overlay"></div>
+          <div class="case-card__content">
+            <span class="case-card__index">Mission 02</span>
+            <span class="case-card__status">POC 試點 · 2026</span>
+            <h3>基礎設施巡檢概念驗證</h3>
+            <p>與能源領域夥伴合作巡檢無人機 POC，整合光電載荷與地面控制系統，預計 Q3 完成首輪試點評估。</p>
+            <div class="case-card__tags"><span>次系統整合</span><span>光電載荷</span><span>巡檢應用</span></div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-card__bg">
+            <img src="assets/images/lab-engineer.jpg" alt="" class="ken-burns">
+          </div>
+          <div class="case-card__overlay"></div>
+          <div class="case-card__content">
+            <span class="case-card__index">Mission 03</span>
+            <span class="case-card__status">洽談中 · 2026</span>
+            <h3>VTOL 學研合作計畫</h3>
+            <p>與國內大學航空系所洽談模組化 VTOL 實驗平台，支援快速更換載荷的原型載具開發。</p>
+            <div class="case-card__tags"><span>VTOL</span><span>學研合作</span><span>模組化</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══ CHAPTER 04 · TEAM ═══ -->
+    <section class="chapter-interstitial reveal-fade" data-chapter>
+      <span class="chapter-interstitial__num">Chapter 04</span>
+      <h2 class="chapter-interstitial__title">Crew</h2>
+      <div class="chapter-interstitial__line"></div>
+    </section>
+
+    <section class="team-cinema" id="team">
+      <header class="team-cinema__head reveal-up">
+        <p class="section-eyebrow">R&amp;D Team · 研發團隊</p>
+        <h2 class="section-title">12 人，<br>四大專業組別</h2>
+      </header>
+
+      <figure class="team-cinema__banner reveal-scale">
+        <img src="assets/images/lab-team.jpg" alt="海德克科技研發團隊" loading="lazy" class="ken-burns ken-burns--slow">
+        <figcaption>跨結構、飛控、載荷、飛測 — 從圖面到天空的完整鏈結</figcaption>
+      </figure>
+
+      <div class="team-cinema__depts reveal-up">
+        <div><strong>結構工程組</strong><span>4 人</span></div>
+        <div><strong>飛控系統組</strong><span>3 人</span></div>
+        <div><strong>載荷整合組</strong><span>3 人</span></div>
+        <div><strong>測試驗證組</strong><span>2 人</span></div>
+      </div>
+
+      <div class="team-cinema__grid">
+        <article class="team-card reveal-up">
+          <div class="team-card__photo"><img src="assets/images/lab-engineer.jpg" alt="" loading="lazy"></div>
+          <h3>陳明德</h3>
+          <p class="team-card__role">執行長 / 創辦人</p>
+          <p>航空工程背景，2025 年創立海德克，帶領團隊從零建立研發體系。</p>
+        </article>
+        <article class="team-card reveal-up">
+          <div class="team-card__photo"><img src="assets/images/workshop.jpg" alt="" loading="lazy"></div>
+          <h3>林雅婷</h3>
+          <p class="team-card__role">技術長 CTO</p>
+          <p>材料科學背景，專精碳纖維複材成型，負責載體結構與製程建置。</p>
+        </article>
+        <article class="team-card reveal-up">
+          <div class="team-card__photo"><img src="assets/images/lab-team.jpg" alt="" loading="lazy"></div>
+          <h3>王志豪</h3>
+          <p class="team-card__role">飛控系統總監</p>
+          <p>電機工程背景，專長飛控韌體與自主導航，搭建飛控技術基礎。</p>
+        </article>
+        <article class="team-card reveal-up">
+          <div class="team-card__photo"><img src="assets/images/satellite-tech.jpg" alt="" loading="lazy"></div>
+          <h3>張惠君</h3>
+          <p class="team-card__role">載荷整合經理</p>
+          <p>光電工程背景，負責載荷整合與次系統代理業務。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══ CHAPTER 05 · CAREERS ═══ -->
+    <section class="careers-cinema" id="careers">
+      <div class="careers-cinema__visual">
+        <img src="assets/images/hero-drone.jpg" alt="" class="ken-burns">
+        <div class="careers-cinema__visual-overlay"></div>
+      </div>
+      <div class="careers-cinema__body">
+        <p class="section-eyebrow section-eyebrow--light reveal-up">Careers · 人才招募</p>
+        <h2 class="section-title section-title--light reveal-up">加入創始團隊，<br>書寫第一幕</h2>
+        <p class="section-sub section-sub--light reveal-up">從 0 到 1 的產品打造 · 示範職缺</p>
+
+        <div class="jobs-cinema">
+          <article class="job-cinema reveal-up">
+            <div class="job-cinema__top"><h3>結構工程師</h3><span>全職 · 內湖</span></div>
+            <p>固定翼 / VTOL 載體結構設計與複材原型製作，歡迎願意從原型階段參與的夥伴。</p>
+            <a href="#contact">應徵 →</a>
+          </article>
+          <article class="job-cinema reveal-up">
+            <div class="job-cinema__top"><h3>飛控韌體工程師</h3><span>全職 · 內湖</span></div>
+            <p>ArduPilot / PX4 飛控韌體開發與調參，適合想在新創發揮完整技術影響力的工程師。</p>
+            <a href="#contact">應徵 →</a>
+          </article>
+          <article class="job-cinema reveal-up">
+            <div class="job-cinema__top"><h3>測試飛手</h3><span>全職 · 新竹</span></div>
+            <p>執行原型機飛行測試並撰寫報告，需持有民航局操作證。</p>
+            <a href="#contact">應徵 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CHAPTER 06 · CONTACT ═══ -->
+    <section class="contact-cinema" id="contact">
+      <div class="contact-cinema__bg">
+        <img src="assets/images/satellite-tech.jpg" alt="" class="ken-burns ken-burns--slow">
+      </div>
+      <div class="contact-cinema__inner">
+        <div class="contact-cinema__info reveal-up">
+          <p class="section-eyebrow section-eyebrow--light">Contact · 聯繫我們</p>
+          <h2 class="section-title section-title--light">開啟下一幕</h2>
+          <dl class="contact-cinema__dl">
+            <div><dt>地址</dt><dd>114 台北市內湖區瑞光路188號8樓</dd></div>
+            <div><dt>電話</dt><dd>+886-2-2795-8866</dd></div>
+            <div><dt>Email</dt><dd>info@heidek-tech.com.tw</dd></div>
+            <div><dt>時間</dt><dd>週一至週五 09:00 – 18:00</dd></div>
+          </dl>
+        </div>
+        <form class="contact-cinema__form reveal-up" id="contactForm">
+          <div class="form-row">
+            <label><span>姓名</span><input type="text" name="name" required placeholder="王小明"></label>
+            <label><span>Email</span><input type="email" name="email" required placeholder="name@company.com"></label>
+          </div>
+          <label><span>洽詢類型</span>
+            <select name="subject">
+              <option>載具 / 複材合作開發</option>
+              <option>次系統整合與代理</option>
+              <option>技術交流</option>
+              <option>履歷投遞</option>
+              <option>其他</option>
+            </select>
+          </label>
+          <label><span>訊息</span><textarea name="message" rows="4" required placeholder="請簡述您的需求…"></textarea></label>
+          <button type="submit" class="btn-cinema btn-cinema--primary btn-cinema--full">送出訊息</button>
+          <p class="form-note">* 雛形表單，送出後不會實際寄信</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="cinema-footer">
+    <div class="cinema-footer__inner">
+      <p class="cinema-footer__brand">HEIDEK TECHNOLOGY</p>
+      <p class="cinema-footer__sub">海德克科技股份有限公司 · 提案版本三 · 電影敘事風</p>
+      <p class="cinema-footer__copy">© 2025 Heidek Technology Co., Ltd. · Beyond the Horizon</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
